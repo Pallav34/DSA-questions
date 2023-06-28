@@ -10,7 +10,17 @@ public class Palindrome {
         }
         return true;
     }
+    static boolean isPalindromeByRecur(String S, int i){
+        int n = S.length();
+        if(i>=n/2){
+            return true;
+        }
+        if(S.charAt(i)!=S.charAt(n-i-1)){
+            return false;
+        }
+        return isPalindromeByRecur(S,i+1);
+    }
     public static void main(String[] args) {
-        System.out.println(isPalindrome(1254));
+        System.out.println(isPalindromeByRecur("Madam",0));
     }
 }
